@@ -1,0 +1,44 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/cart/cart",
+		"pages/order/order",
+		"pages/detail/detail",
+		"pages/submit/submit"
+	],
+	"window": {
+		"backgroundColor": "#F6F6F6",
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#F6F6F6",
+		"navigationBarTitleText": "云开发商城",
+		"navigationBarTextStyle": "black"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#e64340",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "images/tabbar/home-off.png",
+				"selectedIconPath": "images/tabbar/home-on.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/cart/cart",
+				"iconPath": "images/tabbar/cart-off.png",
+				"selectedIconPath": "images/tabbar/cart-on.png",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/order/order",
+				"iconPath": "images/tabbar/order-off.png",
+				"selectedIconPath": "images/tabbar/order-on.png",
+				"text": "订单"
+			}
+		]
+	},
+	"sitemapLocation": "sitemap.json",
+	"style": "v2"
+}
