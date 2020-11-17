@@ -11,6 +11,7 @@
 - 将/cloudfunctions/data.json文件导入到goods集合中，此中包含两个示例商品（来自锤子商城）
 - 登录小程序开发者后台，设置服务类目为【企业管理】，订阅消息选择3520，名称为【新订单提醒】
 - 订阅消息项目选择订单号、订单状态、订单备注三项
+- 将模版id填写至/cloudfunctions/payShopcart/key.json中的templateId下
 - 将/cloudfunctions中所有的云函数都部署上传：云端安装依赖。
 - 重新启动预览小程序即可体验。
 
