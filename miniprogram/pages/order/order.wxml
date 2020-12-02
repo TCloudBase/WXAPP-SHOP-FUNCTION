@@ -1,0 +1,42 @@
+<view class="container">
+	<view wx:if='{{!hasRefund}}' class="status-box">
+		<view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}"
+			wx:for-items="{{statusType}}" wx:key="index" data-index="{{index}}">
+			{{item}}
+			<view class="{{tabClass[index]}}"></view>
+		</view>
+	</view>
+	<view class="no-order" wx:if="{{orderList.length === 0}}">
+		<image src="/images/no-order.png" class="no-order-img"></image>
+		<view class="text">暂无订单</view>
+	</view>
+	<view class="order-list" wx:else>
+		<view class="a-order" wx:for="{{orderList}}" wx:key="index">
+			<view class="weui-cell weui-cell_access" style="padding: 20rpx 30rpx" hover-class="weui-cell_active">
+				<view class="weui-cell__bd">No.{{index + 1}}</view>
+				<view class="weui-cell__ft">{{item.type==1?"等待买家付款":(item.type==2?"等待卖家发货":"交易完成")}}</view>
+		</view>
+			<scroll-view class="goods-img-container" scroll-x="true">
+				<view class="goods-meta">
+					<view class="img-box">
+						<image src="{{item.img}}" class="goods-img"></image>
+					</view>
+					<view>
+						<view class="goods-name">{{item.title}}</view>
+						<text class="goods-description app-tiny-font"
+							wx:for="{{item.options}}" wx:key="index">{{item.name}}:{{item.value}} </text>
+					</view>
+				</view>
+			</scroll-view>
+			<view class="goods-price">
+				共 {{item.number}} 件商品 合计：
+				<text class="p">¥ {{item.price * item.number}}</text>
+			</view>
+			<view class="price-box">
+				<view class="btn" bindtap="cancelOrderTap" data-id="{{item._id}}" wx:if="{{item.type!=2}}">{{item.type!=3?'取消订单':'删除订单'}}</view>
+				<view class="btn active" bindtap="toPayTap" data-id="{{item._id}}" wx:if="{{item.type==1}}">马上付款</view>
+				<view class="btn active" bindtap="toDoneOrder" data-id="{{item._id}}" wx:if="{{item.type==2}}">确认收货</view>
+			</view>
+		</view>
+	</view>
+</view>

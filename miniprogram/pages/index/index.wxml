@@ -1,0 +1,16 @@
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}"/>
+<view class="container" wx:else>
+  <view class="goods-box" wx:for-items="{{goods}}" wx:key="index" bindtap="todetail" data-id="{{item._id}}">
+    <view class="img-box">
+      <image src="{{item.img}}" class="image" mode="aspectFill" lazy-load="true" />
+    </view>
+    <view class="goods-title">{{item.title}}</view>
+    <view class="flex">
+      <view class="goods-price">¥ {{item.price}}</view>
+      <view wx:if="{{item.origin && item.origin > 0}}" class="goods-price"
+        style='color:#aaa;text-decoration:line-through'>¥ {{item.origin}}</view>
+    </view>
+  </view>
+  <view class="no-more-goods">{{(goods!=null&&goods.length!=0)?'没有更多啦':'本商城暂无商品'}}</view>
+</view>

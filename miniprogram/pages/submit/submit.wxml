@@ -1,0 +1,69 @@
+<view class="container">
+    <view class="goods-list">
+        <view class="list-title">商品列表</view>
+        <view class="a-goods" wx:for="{{billList}}" wx:key="index">
+            <view class="img-box">
+                <image src="{{item.img}}" class="img" />
+            </view>
+            <view class="text-box">
+                <view class="arow arow01">
+                    <view class="goods-name">{{item.title}}</view>
+                    <view class="goods-price">¥ {{item.price}}</view>
+                </view>
+                <view class="arow">
+                    <view class="goods-label" style="overflow:hidden">
+                        <text wx:for="{{item.options}}" wx:for-item="option" wx:key="index">{{option.name}}：{{option.value}}
+                        </text>
+                    </view>
+                    <view class="goods-num">x {{item.number}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="peisong-way">
+        <view class="row-box">
+            <view class="row-label">配送方式</view>
+            <radio-group bind:change="onDeliveryTypeChange">
+                <label class="radio">
+                    <radio value="fast" checked="{{deliveryType == 'fast'}}" /> 快递
+                </label>
+                <label class="radio">
+                    <radio value="self" checked="{{deliveryType == 'self'}}" /> 到店自取
+                </label>
+            </radio-group>
+        </view>
+        <view class="address-box" wx:if="{{deliveryType == 'fast'}}">
+            <view class="add-address" hidden="{{addressData}}">
+                <view class="title" bindtap="addAddress">新增收货地址</view>
+            </view>
+            <view class="show-address" hidden="{{!addressData}}">
+                <view class="name-tel">{{addressData.name}} {{addressData.phone}}</view>
+                <view class="addr-text">{{addressData.address}}</view>
+            </view>
+        </view>
+        <view class="row-box">
+            <view class="row-label">备注</view>
+            <view class="right-text">
+                <input name="remark" type="text" class="liuyan" placeholder="如需备注请输入" bindinput="getremark" />
+            </view>
+        </view>
+    </view>
+
+    <view class="goods-info">
+        <view class="row-box">
+            <view class="row-label">商品金额</view>
+            <view class="right-text">¥ {{totalAmount}}</view>
+        </view>
+        <view class="row-box" wx:if="{{deliveryType == 'fast'}}">
+            <view class="row-label">运费</view>
+            <view class="right-text">¥ {{deliveryCost}}</view>
+        </view>
+    </view>
+
+    <view class="summary-box">
+        <view class="left-price">
+            <view class="total">合计：¥ {{totalAmount + ((deliveryType == 'fast') ? deliveryCost : 0)}}</view>
+        </view>
+        <button class="to-pay-btn" bindtap="submitorder">提交订单</button>
+    </view>
+</view>

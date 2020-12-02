@@ -1,0 +1,64 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/8/31 下午12:32:50 
+使用方法：
+在 /Users/zirali/Documents/代码实验室/shop/miniprogram/pages/detail/detail.wxml 引入模板
+
+```
+<import src="detail.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/zirali/Documents/代码实验室/shop/miniprogram/pages/detail/detail.wxss 中引入样式
+```
+@import "./detail.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view class="swiper-container">
+        <swiper indicator-dots="true" autoplay="false" class="swiper_box" duration="1000" indicator-active-color="#ffffff" indicator-color="rgba(255, 255, 255, .3)" interval="5000" current="0">
+          <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+            <image class="slide-image sk-image" mode="aspectFill"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view class="goods-info">
+        <view class="goods-title sk-transparent sk-text-14-2857-272 sk-text">Smartisan 真无线TWS蓝牙耳机</view>
+        <view class="flex">
+          <view class="goods-price self-center">
+            <text style="font-size: 1.3rem" class="sk-transparent sk-text-14-2857-416 sk-text sk-pseudo sk-pseudo-circle">49</text>
+          </view>
+          <view class="goods-price self-center" style="color: rgb(170, 170, 170); text-decoration: line-through transparent;">
+            <text class="sk-transparent sk-text-14-2857-627 sk-text sk-pseudo sk-pseudo-circle">249</text>
+          </view>
+        </view>
+        <view class="flex between">
+          <view style="color:#888;font-size:12px;" class="sk-transparent sk-text-14-2857-401 sk-text">97 人已付款</view>
+          <view style="color:#888;font-size:12px;" class="sk-transparent sk-text-14-2857-767 sk-text">产地：锤子科技</view>
+        </view>
+      </view>
+      <view class="width-100 space"></view>
+      <view class="goods-des-info">
+        <view class="label-title sk-transparent sk-text-14-2857-2 sk-text">商品详情</view>
+        <view>
+          <image class="desc-image sk-image" mode="aspectFill" style="height:2846px"></image>
+        </view>
+      </view>
+      <view class="footer-box flex">
+        <button class="initial-button contact flex vertical evenly sk-button sk-pseudo sk-pseudo-circle" open-type="contact">
+          <image class="self-center sk-image" mode="aspectFit"></image>
+          <view class="self-center desc sk-transparent sk-text-13-3333-171 sk-text" style="background-position-x: 50%;">客服</view>
+        </button>
+        <button class="initial-button shop-cart-btn flex vertical evenly sk-button sk-pseudo sk-pseudo-circle">
+          <image class="self-center sk-image" mode="aspectFit"></image>
+          <view class="self-center desc sk-transparent sk-text-13-3333-476 sk-text" style="background-position-x: 50%;">购物车</view>
+        </button>
+        <button class="initial-button join-shop-cart sk-transparent sk-button sk-pseudo sk-pseudo-circle">加入购物车</button>
+        <button class="initial-button now-buy sk-transparent sk-button sk-pseudo sk-pseudo-circle">立即购买</button>
+      </view>
+    </view>
+  </view>
+</template>

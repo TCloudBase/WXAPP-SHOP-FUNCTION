@@ -1,0 +1,73 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/8/31 下午1:44:19 
+使用方法：
+在 /Users/zirali/Documents/代码实验室/shop/miniprogram/pages/index/index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/zirali/Documents/代码实验室/shop/miniprogram/pages/index/index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view class="goods-box" data-id="c5fab3435c489abf003a777a35be3868">
+        <view class="img-box">
+          <image class="image sk-image" lazy-load="true" mode="aspectFill"></image>
+        </view>
+        <view class="goods-title sk-transparent sk-text-20-0000-74 sk-text">Smartisan 真无线TWS蓝牙耳机</view>
+        <view class="flex">
+          <view class="goods-price sk-transparent sk-text-20-0000-9 sk-text">¥ 29</view>
+          <view class="goods-price sk-transparent sk-text-20-0000-886 sk-text" style="color: rgb(170, 170, 170); text-decoration: line-through transparent;">¥ 149</view>
+        </view>
+      </view>
+      <view class="goods-box" data-id="c5fab3435f489abf003a777a35be3868">
+        <view class="img-box">
+          <image class="image sk-image" lazy-load="true" mode="aspectFill"></image>
+        </view>
+        <view class="goods-title sk-transparent sk-text-20-0000-375 sk-text">Smartisan 真无线TWS蓝牙耳机</view>
+        <view class="flex">
+          <view class="goods-price sk-transparent sk-text-20-0000-723 sk-text">¥ 49</view>
+          <view class="goods-price sk-transparent sk-text-20-0000-856 sk-text" style="color: rgb(170, 170, 170); text-decoration: line-through transparent;">¥ 249</view>
+        </view>
+      </view>
+      <view class="goods-box" data-id="c5fab3435c489abf003a777a35be3868">
+        <view class="img-box">
+          <image class="image sk-image" lazy-load="true" mode="aspectFill"></image>
+        </view>
+        <view class="goods-title sk-transparent sk-text-20-0000-113 sk-text">Smartisan 真无线TWS蓝牙耳机</view>
+        <view class="flex">
+          <view class="goods-price sk-transparent sk-text-20-0000-706 sk-text">¥ 29</view>
+          <view class="goods-price sk-transparent sk-text-20-0000-576 sk-text" style="color: rgb(170, 170, 170); text-decoration: line-through transparent;">¥ 149</view>
+        </view>
+      </view>
+      <view class="goods-box" data-id="c5fab3435f489abf003a777a35be3868">
+        <view class="img-box">
+          <image class="image sk-image" lazy-load="true" mode="aspectFill"></image>
+        </view>
+        <view class="goods-title sk-transparent sk-text-20-0000-287 sk-text">Smartisan 真无线TWS蓝牙耳机</view>
+        <view class="flex">
+          <view class="goods-price sk-transparent sk-text-20-0000-371 sk-text">¥ 49</view>
+          <view class="goods-price sk-transparent sk-text-20-0000-496 sk-text" style="color: rgb(170, 170, 170); text-decoration: line-through transparent;">¥ 249</view>
+        </view>
+      </view>
+      <view class="goods-box" data-id="c5fab3435c489abf003a777a35be3868">
+        <view class="img-box">
+          <image class="image sk-image" lazy-load="true" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="goods-box" data-id="c5fab3435f489abf003a777a35be3868">
+        <view class="img-box">
+          <image class="image sk-image" lazy-load="true" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

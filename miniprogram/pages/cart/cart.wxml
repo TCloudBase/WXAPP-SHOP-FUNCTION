@@ -1,0 +1,54 @@
+<view class="container">
+
+  <block wx:if="{{billList!=null && billList.length != 0}}">
+    <view class="list-top">
+      <view class="label">微商城</view>
+      <view class="edit-btn" hidden="{{!saveHidden}}" bindtap="editTap">编辑</view>
+      <view class="edit-btn" hidden="{{saveHidden}}" bindtap="saveTap">完成</view>
+    </view>
+    <view class="goodsList">
+      <view class="a-good" wx:for="{{billList}}" wx:key="_id">
+        <view class="a-good-conts {{item.active? 'active':''}}" buttons="{{slideButtons}}" data-id="{{item._id}}"
+          bindbuttontap="delButtonTap">
+          <view class="goods-info" data-id="{{item._id}}" bind:tap="selectTap">
+            <view class="img-box">
+              <image src="{{item.img}}" mode="aspectFill" class="img" />
+            </view>
+            <view class="text-box">
+              <view class="goods-title">{{item.title}}</view>
+              <view class="goods-label">
+                <block wx:for="{{item.options}}" wx:for-item="option" wx:key="index">
+                  <text>{{option.name}}:{{option.value}} </text>
+                </block>
+              </view>
+              <view class="flex between">
+                <view class="goods-price flex">¥ {{item.price}}</view>
+                <view class="buy-num self-center">
+                  <view class="minus-btn {{item.number==buyNumMin ? 'disabled' : ''}}" catch:tap="minusBtnTap"
+                    data-id="{{item._id}}">-</view>
+                  <input type="number" value="{{item.number}}" disabled />
+                  <view class="add-btn {{item.number==buyNumMax ? 'disabled' : ''}}" catch:tap="addBtnTap"
+                    data-id="{{item._id}}">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="settlement-box">
+      <view class="left-price">
+        <view class="all-selected  {{billList.length === selectedList.length?'active':''}}" bind:tap="onAllSelect">全选</view>
+        <view class="total" hidden="{{selectedList.length <= 0}}">合计：¥ {{totalPrice}}</view>
+      </view>
+      <button class="initial-button to-pay-btn {{selectedList.length <= 0?'no-select':''}}" hidden="{{!saveHidden}}"
+        disabled="{{selectedList.length <= 0}}" bind:tap="toPayOrder">去结算</button>
+      <button class="initial-button to-pay-btn {{selectedList.length <= 0?'no-select':''}}" hidden="{{saveHidden}}"
+        disabled="{{selectedList.length <= 0}}" bind:tap="deleteSelected">删除</button>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="title-box">购物车空空如也～</view>
+    <navigator class="to-index-btn self-center" open-type="switchTab" url="/pages/index/index">去逛逛</navigator>
+  </block>
+</view>
